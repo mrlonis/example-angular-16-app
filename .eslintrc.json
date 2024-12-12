@@ -49,6 +49,15 @@
             "style": "kebab-case"
           }
         ],
+        "@angular-eslint/sort-lifecycle-methods": "error",
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "types": {
+              "Promise": "Promise is not allowed, use Observable instead"
+            }
+          }
+        ],
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-unused-vars": [
           "error",
@@ -60,7 +69,9 @@
         ],
         "import/newline-after-import": ["error", { "count": 1 }],
         "import/no-absolute-path": "error",
+        "import/no-cycle": "error",
         "import/no-deprecated": "error",
+        "import/no-self-import": "error",
         "import/no-unresolved": "error",
         "import/no-useless-path-segments": [
           "error",
@@ -87,9 +98,13 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility",
+        "prettier",
         "plugin:prettier/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/template/no-duplicate-attributes": "error",
+        "@angular-eslint/template/prefer-self-closing-tags": "error"
+      }
     }
   ]
 }
